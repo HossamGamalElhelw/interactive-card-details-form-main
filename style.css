@@ -6,6 +6,7 @@ html {
 body {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
   font-size: 15px;
 }
 * {
@@ -34,7 +35,7 @@ body {
     margin-top: 0 !important;
   }
   .card-logo img {
-    width: 5rem;
+    width: 3rem;
   }
   .cards {
     left: 4rem !important;
@@ -42,8 +43,16 @@ body {
   .card-back {
     left: 5rem !important;
   }
+  .img-card-front,
+  .img-card-back {
+    width: 100% !important;
+  }
+  .card-back.card-password {
+    right: 25% !important;
+  }
 }
-@media screen and (max-width: 767px) {
+
+@media screen and (max-width: 700px) {
   .container {
     flex-direction: column;
   }
@@ -62,14 +71,22 @@ body {
   .card-back {
     position: relative !important;
     top: 0 !important;
-    left: 0 !important;
+    left: 4rem !important;
+  }
+  .card-back .card-password {
+    top: 34%;
+    right: 15%;
   }
   .card-front {
+    margin-left: 0 !important;
     position: relative;
-    left: 8rem !important;
-    top: -4rem !important;
+    top: -2rem !important;
     z-index: 1;
-    width: 100% !important;
+  }
+  .card-front-info {
+    margin-top: -0.5rem;
+    top: 3rem !important;
+    left: 2rem !important;
   }
   .card-back,
   .card-front,
@@ -77,27 +94,32 @@ body {
   .card-front img {
     width: 15rem;
   }
-  .card-logo {
-    margin-top: -0.5rem;
-  }
+
   .card-logo img {
     width: 3rem;
+    margin-top: -1rem !important;
+    margin-left: -1rem;
+    margin-bottom: 1.8rem;
   }
 
   .card-front-info-des {
-    margin-top: -2rem !important;
+    margin-top: -2.5rem !important;
     margin-left: -1.1rem;
   }
+
+  .right_section {
+    margin: 8rem auto !important;
+  }
 }
+
 .container {
   display: flex;
-  position: relative;
+  height: 100vh;
 }
 .left_section {
   background-image: url("./images/bg-main-desktop.png");
   background-repeat: no-repeat;
-  width: 40%;
-  min-height: 100vh;
+  width: 30%;
 }
 .container__form {
   position: absolute;
@@ -107,31 +129,37 @@ body {
   display: flex;
   flex-direction: column;
   position: absolute;
+  width: 50%;
   top: 8rem;
-  left: 10rem;
+  left: 8rem;
+}
+.img-card-front,
+.img-card-back {
+  width: 25rem;
 }
 .card-front {
-  margin-bottom: 13rem;
+  margin-left: -5rem;
   font-weight: 400;
   color: var(--neutral-color-white);
 }
 .card-front-info {
   position: absolute;
-  top: 2rem;
-  left: 2rem;
+  top: 1rem;
+  left: -3rem;
 }
 .card-front-num {
   font-weight: 400;
 }
 .card-back {
-  position: absolute;
+  margin-top: 1rem;
+  /* position: absolute;
   left: 13rem;
-  top: 60%;
+  top: 40%; */
 }
 .card-back p {
   position: absolute;
-  top: 38.5%;
-  right: 3.5rem;
+  top: 70%;
+  right: 43%;
   color: var(--neutral-color-white);
   letter-spacing: 0.1rem;
   font-weight: 400;
@@ -139,17 +167,17 @@ body {
 
 .right_section {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  margin: 15rem auto;
+  grid-template-columns: repeat(1, 20rem);
+  margin: 10rem auto;
   width: 20rem;
   text-transform: uppercase;
   font-size: 0.7rem;
   letter-spacing: 0.1rem;
+  z-index: 1;
 }
 .right_section label {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  margin-top: 0.5rem;
 }
 .right_section label input {
   font-size: 1rem;
@@ -171,151 +199,38 @@ input::-webkit-inner-spin-button {
   color: var(--neutral-light-grayish);
 }
 .info__data {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: space-between;
+  width: 20rem;
 }
-.info__date :nth-child(2),
-.info__date :first-child {
-  width: 5rem;
+.info_data_1 {
+  width: 10rem;
+  display: flex;
+  flex-direction: row;
 }
-.info__date :nth-child(3) {
-  padding-left: 1rem;
+.info_data_2 {
+  width: 10rem;
+  margin-right: 0.7rem;
+}
+#card_cvc {
+  width: 100%;
+}
+#card_month,
+#card_year {
+  width: 30%;
 }
 .card-front-info-des {
   margin-top: 3rem;
 }
 .card-front-info-user {
   display: flex;
+  justify-content: space-between;
 }
-.card-front-info-user :last-child {
-  position: relative;
-  left: 14rem;
-}
-.card-data {
-  display: grid;
-  grid-template-columns: 5rem 5rem;
-  margin-right: 1rem;
-}
+
 .card-data :first-child {
   margin-right: 0.5rem;
 }
 #btn_confirm {
-  height: 3rem;
-  border: 1px solid var(--neutral-light-grayish);
-  border-radius: 0.4rem;
-  background-color: var(--very-dark-violet);
-  color: var(--neutral-color-white);
-  font-size: 1rem;
-  cursor: pointer;
-}
-
-    width: 4rem !important;
-  }
-  .card-front img,
-  .card-back img {
-    width: 10rem;
-  }
-  .info__user {
-    width: 20rem !important;
-  }
-}
-.container {
-  display: flex;
-  position: relative;
-  height: 100vh;
-}
-
-.container__form {
-  position: absolute;
-}
-
-.cards {
-  position: absolute;
-  top: 8rem;
-  left: 10rem;
-}
-.card-front {
-  margin-bottom: 2rem;
-  font-weight: 400;
-  color: var(--neutral-color-white);
-}
-.card-front-info {
-  position: absolute;
-  top: 2rem;
-  left: 2rem;
-}
-.card-front-num {
-  font-weight: 400;
-}
-.card-back {
-  position: absolute;
-  left: 6rem;
-}
-.card-back p {
-  position: absolute;
-  top: 38.5%;
-  right: 3.5rem;
-  color: var(--neutral-color-white);
-  letter-spacing: 0.1rem;
-  font-weight: 400;
-}
-
-.info__user {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  margin: 15rem auto;
-  width: 20rem;
-  text-transform: uppercase;
-  font-size: 0.7rem;
-  letter-spacing: 0.1rem;
-}
-.info__user label {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  margin-top: 0.5rem;
-}
-.info__user label input {
-  font-size: 1rem;
-  border: 1px solid var(--neutral-light-grayish);
-  border-radius: 0.4rem;
-  background-color: var(--neutral-color-white);
-  padding: 0.5rem 0.2rem 0.5rem 0.5rem;
-  margin: 0.5rem 0 1rem 0;
-}
-.info__user label input:focus {
-  outline: none;
-  border: 1px solid hsl(278, 94%, 30%);
-}
-::placeholder {
-  color: var(--neutral-light-grayish);
-}
-.info__data {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
-.info__date :nth-child(2),
-.info__date :first-child {
-  width: 5rem;
-}
-.info__date :nth-child(3) {
-  padding-left: 1rem;
-}
-.card-front-info-user {
-  display: flex;
-}
-.card-front-info-user :last-child {
-  position: relative;
-  left: 14rem;
-}
-.card-data {
-  display: grid;
-  grid-template-columns: 5rem 5rem;
-  margin-right: 1rem;
-}
-.card-data :first-child {
-  margin-right: 0.5rem;
-}
-.btn-confirm {
   height: 3rem;
   border: 1px solid var(--neutral-light-grayish);
   border-radius: 0.4rem;
