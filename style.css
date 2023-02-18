@@ -16,7 +16,7 @@ body {
   --very-dark-violet: hsl(278, 68%, 11%);
 }
 .hidden {
-  display: none !important;
+  display: none;
 }
 @media screen and (max-width: 1023px) {
   body {
@@ -232,6 +232,37 @@ input::-webkit-inner-spin-button {
 }
 #btn_confirm {
   height: 3rem;
+  border: 1px solid var(--neutral-light-grayish);
+  border-radius: 0.4rem;
+  background-color: var(--very-dark-violet);
+  color: var(--neutral-color-white);
+  font-size: 1rem;
+  cursor: pointer;
+}
+.error-msg {
+  color: red;
+  text-transform: lowercase;
+  margin-top: -0.5rem;
+  margin-bottom: 1.3rem;
+  display: none;
+}
+.thank {
+  display: none;
+  text-align: center;
+  margin: auto auto;
+  z-index: 2;
+}
+.thank h1 {
+  text-transform: uppercase;
+}
+.thank p {
+  color: var(--dark-grayish-violet);
+  font-size: 14px;
+  letter-spacing: 1px;
+}
+.thank button {
+  height: 3rem;
+  padding: 0 6rem;
   border: 1px solid var(--neutral-light-grayish);
   border-radius: 0.4rem;
   background-color: var(--very-dark-violet);
