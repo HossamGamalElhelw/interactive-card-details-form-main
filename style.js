@@ -66,8 +66,4 @@ btnConfirm.addEventListener("click", () => {
     rightSide.style.display = "none";
     correctMsg.style.display = "block";
   }
-  setInterval(() => {
-    rightSide.style.display = "none";
-    correctMsg.style.display = "block";
-  }, 5000);
 });
