@@ -166,6 +166,7 @@ body {
 }
 
 .right_section {
+  display: block;
   display: grid;
   grid-template-columns: repeat(1, 20rem);
   margin: 10rem auto;
@@ -248,6 +249,7 @@ input::-webkit-inner-spin-button {
 }
 .thank {
   display: none;
+  opacity: 1;
   text-align: center;
   margin: auto auto;
   z-index: 2;
