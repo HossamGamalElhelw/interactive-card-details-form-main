@@ -60,10 +60,13 @@ function checkInputs() {
   return isEmpty;
 }
 
-btnConfirm.addEventListener("click", () => {
-  const isEmpty = checkInputs();
-  if (!isEmpty) {
+btnConfirm.addEventListener("click", (event) => {
+  event.preventDefault();
+  if (!checkInputs()) {
     rightSide.style.display = "none";
     correctMsg.style.display = "block";
+    correctMsg.style.opacity = 1;
+    console.log("correctMsg shown");
   }
 });
+
