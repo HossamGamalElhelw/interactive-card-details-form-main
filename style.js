@@ -13,6 +13,9 @@ const btnConfirm = document.getElementById("btn_confirm"),
   correctMsg = document.querySelector(".thank"),
   rightSide = document.querySelector(".right_section");
 
+const state1 = document.querySelector("container form");
+const state2 = document.querySelector("container div");
+
 cardName.addEventListener("input", (event) => {
   const inputText = event.target.value;
   cardOwner.textContent = inputText;
@@ -37,7 +40,7 @@ cardCvc.addEventListener("input", (event) => {
 
 function checkInputs() {
   let isEmpty = false;
-  if (cardName.value === "") {
+  if (!cardName.value) {
     isEmpty = true;
     errorMsg[0].style.display = "block";
   }
@@ -69,4 +72,3 @@ btnConfirm.addEventListener("click", (event) => {
     console.log("correctMsg shown");
   }
 });
-
